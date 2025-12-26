@@ -50,35 +50,13 @@ Es signalisiert dem Browser, dass der gesamte darin enthaltene Code als HTML int
 
     <html></html>
 
-2. Text-Strukturierung & Semantik
-Diese Tags geben dem Inhalt Bedeutung und helfen Suchmaschinen (SEO).
+## 2. Text-Strukturierung & Semantik
 
-    <h1> bis <h6>: Überschriften (h1 ist die wichtigste).
-    <p>: Definiert einen Textabsatz (Paragraph).
-    <strong>: Hebt Text fett hervor (starke semantische Betonung).
-    <em>: Hebt Text kursiv hervor (Akzentuierung).
-    <br>: Erzwingt einen Zeilenumbruch (selbstschließendes Tag).
-    <hr>: Zeichnet eine horizontale Linie zur thematischen Trennung.
+Diese Tags geben dem Inhalt Bedeutung und helfen Suchmaschinen (SEO):
 
-3. Listen & Verweise
-
-    <a>: Erstellt einen Hyperlink (Attribut href erforderlich).
-    <ul>: Ungeordnete Liste (Aufzählungszeichen).
-    <ol>: Geordnete Liste (Nummerierung).
-    <li>: Einzelnes Listenelement innerhalb von <ul> oder <ol>.
-
-4. Medien & Container
-
-    <img>: Bindet ein Bild ein (Attribute src und alt sind Pflicht).
-    <div>: Ein allgemeiner Block-Container zur Gruppierung von Elementen (für CSS-Styling).
-    <span>: Ein Inline-Container für Textabschnitte.
-
-5. Semantische HTML5-Tags (Layout)
-Verbessern die Struktur für Barrierefreiheit und SEO.
-
-    <header>: Kopfbereich einer Seite oder eines Abschnitts.
-    <nav>: Enthält Navigationslinks.
-    <main>: Markiert den Hauptinhalt der Seite.
-    <section>: Definiert einen thematischen Abschnitt.
-    <article>: Für eigenständige Inhalte (z. B. Blogposts).
-    <footer>: Fußbereich einer Seite.
+- `<h1>` bis `<h6>`: Überschriften (h1 ist die wichtigste).
+- `<p>`: Definiert einen Textabsatz (Paragraph).
+- `<strong>`: Hebt Text fett hervor (starke semantische Betonung).
+- `<em>`: Hebt Text kursiv hervor (Akzentuierung).
+- `<br>`: Erzwingt einen Zeilenumbruch (selbstschließendes Tag).
+- `<hr>`: Zeichnet eine horizontale Linie zur thematischen Trennung.
