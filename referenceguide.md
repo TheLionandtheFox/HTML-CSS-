@@ -52,10 +52,21 @@ Es umschließt alle anderen Elemente einer Webseite (außer der `<!DOCTYPE html>
 - **`<head>`**: Enthält Metainformationen (Titel, Scripte, CSS-Links), die nicht direkt auf der Seite erscheinen.
 
     <html> 
-        <head> </head>
+        <head>
+            <meta charset="UTF-8">
+            <title>Seitentitel</title>
+        </head>
     </html>
 
 - **`<body>`**: Umschließt den gesamten sichtbaren Inhalt der Webseite, wie Texte, Überschriften, Bilder, Links, Videos, Tabellen, Listen usw. Er fungiert als Container für alles, was der Besucher der Website sieht.
+
+    <html>
+        <head></head>
+        <body>
+            <h1>Willkommen</h1>
+            <p>Dies ist der sichtbare Inhalt.</p>
+        </body>
+    </html>
 
 ## 2. Text-Strukturierung & Semantik
 
@@ -66,6 +77,18 @@ Regeln für Überschriften h1-h6:
 **h1 Einmal pro Seite**: Die wichtigste Überschrift, der Titel der Seite, sollte nur einmal vorkommen, um das Hauptthema klar zu definieren.
 **Logische Hierarchie (h2-h6)**: Muss man der Reihenfolge folgen. Ein h2 ist unter h2, danach kommt h3 und so weiter. Vermeide Sprünge wie h2 -> h4.
 **Häufigkeit**: h2, h3, h4 usw. können mehrmals verwendet werden, solange es der Struktur dient. Oft reichen h1-h3 für die meisten Seiten aus. Ein h2 nach einem zB. h4 nur benutzen, wenn es neue Section anfängt.
+
+    <html>
+        <head></head>
+        <body>
+            <h1>Hauptthema</h1>
+            <h2>Unterthema</h2>
+            <h3>Unterthema</h3>
+            <h4>Unterthema</h4>
+            <h5>Unterthema</h5>
+            <h6>Unterthema</h6>
+        </body>
+    </html>
 
 - `<p>`: Definiert einen Textabsatz (Paragraph).
 - `<strong>`: Hebt Text fett hervor (starke semantische Betonung).
@@ -96,6 +119,8 @@ Diese Tags verbessern Struktur, Barrierefreiheit und SEO:
 - `<section>`: Thematischer Abschnitt.
 - `<article>`: Eigenständiger Inhalt (z. B. Blogpost).
 - `<footer>`: Fußbereich der Seite.
+
+## Vollständiges html
 
     <!DOCTYPE html>
     <html lang="de">
@@ -134,9 +159,12 @@ Diese Tags verbessern Struktur, Barrierefreiheit und SEO:
             </section>
 
             <section>
-                <h2>H2 Überschrift: Ein Bild sagt mehr als Worte</h2>
-                <p> hier drunter ist ein Bild mit img-Tag</p>
-                <img src="beispiel.jpg" alt="Ein schönes Beispielbild" width="300">
+                <div>
+                    <h2>H2 Überschrift: Ein Bild sagt mehr als Worte</h2>
+                    <h3>H3 Überschrift</h3>
+                    <p> hier drunter ist ein Bild mit img-Tag</p>
+                    <img src="beispiel.jpg" alt="Ein schönes Beispielbild" width="300">
+                </div>
             </section>
         </main>
 
