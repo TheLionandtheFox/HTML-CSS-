@@ -96,3 +96,52 @@ Diese Tags verbessern Struktur, Barrierefreiheit und SEO:
 - `<section>`: Thematischer Abschnitt.
 - `<article>`: Eigenständiger Inhalt (z. B. Blogpost).
 - `<footer>`: Fußbereich der Seite.
+
+    <!DOCTYPE html>
+    <html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Meine Beispielseite 2025</title>
+    </head>
+    <body>
+        <header>
+            <h1>Willkommen auf meiner Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="#info">Informationen</a></li>
+                    <li><a href="https://dasisteinlink.de" target="_blank">Verlinkungzu</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="info">
+                <h2>Über HTML</h2>
+                <p>HTML ist die <strong>Standard-Markupsprache</strong> für Webseiten. 
+                Mit HTML5 stehen uns viele <em>semantische Elemente</em> zur Verfügung.</p>
+                <p> Das ist ein Absatz mit p Tag. <strong>Das ist dick mit Strong-Taggemacht.</strong> für Webseiten. 
+                <em>Kursiver Text mit em Tag.</em></p>
+                
+                <hr>
+                
+                <h3>Das ist eine Liste:</h3>
+                <ul>
+                    <li>Enzelne Listen-Elemente</li>
+                    <li>Ein Texteditor (z. B. VS Code)</li>
+                    <li>Ein moderner Webbrowser</li>
+                    <li>Gute Dokumentationen</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>H2 Überschrift: Ein Bild sagt mehr als Worte</h2>
+                <p> hier drunter ist ein Bild mit img-Tag</p>
+                <img src="beispiel.jpg" alt="Ein schönes Beispielbild" width="300">
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Im Footer: 2025 Mein Web-Nachschlagewerk</p>
+        </footer>
+    </body>
+    </html>
