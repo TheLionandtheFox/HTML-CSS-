@@ -1,4 +1,6 @@
-# HTML Erklärt !! Noch in Arbeit
+# HTML Erklärt
+
+**Status:** Noch in Arbeit
 
 ## Wichtige Merkmale
 
@@ -21,16 +23,19 @@ Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten:
 
 ## Übersicht Aufbau
 
-    ```<!DOCTYPE html>
-    <html lang="de">
-    <head>
-        <title>Titel der Seite</title>
-    </head>
-    <body>
-        <h1>Hallo Welt!</h1>
-    </body>
-    </html>
-    ```
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Titel der Seite</title>
+</head>
+<body>
+    <h1>Hallo Welt!</h1>
+</body>
+</html>
+```
+
+---
 
 1. Grundgerüst (Struktur-Tags)
 
@@ -80,47 +85,65 @@ Regeln für Überschriften h1-h6:
 **Logische Hierarchie (h2-h6)**: Muss man der Reihenfolge folgen. Ein h2 ist unter h2, danach kommt h3 und so weiter. Vermeide Sprünge wie h2 -> h4.
 **Häufigkeit**: h2, h3, h4 usw. können mehrmals verwendet werden, solange es der Struktur dient. Oft reichen h1-h3 für die meisten Seiten aus. Ein h2 nach einem zB. h4 nur benutzen, wenn es neue Section anfängt.
 
-    ``<html>
-        <head></head>
-        <body>
-            <h1>Hauptthema</h1>
-            <h2>Unterthema</h2>
-            <h3>Unterthema</h3>
-            <h4>Unterthema</h4>
-            <h5>Unterthema</h5>
-            <h6>Unterthema</h6>
-        </body>
-    </html>``
+```html
+<html>
+    <head></head>
+    <body>
+        <h1>Hauptthema</h1>
+        <h2>Unterthema</h2>
+        <h3>Unterthema</h3>
+        <h4>Unterthema</h4>
+        <h5>Unterthema</h5>
+        <h6>Unterthema</h6>
+    </body>
+</html>
+```
 
-- `<p>`: Definiert einen Textabsatz (Paragraph).
-- `<strong>`: Hebt Text fett hervor (starke semantische Betonung).
-- `<em>`: Hebt Text kursiv hervor (Akzentuierung). Screenreader erkennen es und können die Betonung auch hörbar machen
-- `<br>`: Erzwingt einen Zeilenumbruch (selbstschließendes Tag).
-- `<hr>`: Zeichnet eine horizontale Linie zur Trennung.
+### Weitere Text-Tags
+
+- **`<p>`**: Definiert einen Textabsatz (Paragraph).
+- **`<strong>`**: Hebt Text fett hervor (starke semantische Betonung).
+- **`<em>`**: Hebt Text kursiv hervor (Akzentuierung). Screenreader erkennen es und können die Betonung auch hörbar machen.
+- **`<br>`**: Erzwingt einen Zeilenumbruch (selbstschließendes Tag).
+- **`<hr>`**: Zeichnet eine horizontale Linie zur Trennung.
+
+---
 
 ## 3. Listen & Verweise
 
-- `<a>`: Erstellt einen Hyperlink (Attribut `href` erforderlich).
+### Links: `<a>`
 
-    <p>Diese Seite <a href="https://www.seite.de">Link Name</a> ist verllinkt.</p>
+Erstellt einen Hyperlink (Attribut `href` erforderlich).
 
-- `<ul>`: Ungeordnete Liste.
+```html
+<p>Diese Seite <a href="https://www.seite.de">Link Name</a> ist verlinkt.</p>
+```
 
-    <ul>
-        <li>Apfel</li>
-        <li>Hundefutter</li>
-        <li>Batterien</li>
-    </ul>
+### Ungeordnete Liste: `<ul>`
 
-- `<ol>`: Geordnete Liste.
+```html
+<ul>
+    <li>Apfel</li>
+    <li>Hundefutter</li>
+    <li>Batterien</li>
+</ul>
+```
 
-    <ol>
-        <li>Erster Schritt</li>
-        <li>Zweiter Schritt</li>
-        <li>Dritter Schritt</li>
-    </ol>
+### Geordnete Liste: `<ol>`
 
-- `<li>`: Einzelnes Listenelement. `<li>`-Elemente innerhalb von `<ul>` oder `<ol>` verwenden.
+```html
+<ol>
+    <li>Erster Schritt</li>
+    <li>Zweiter Schritt</li>
+    <li>Dritter Schritt</li>
+</ol>
+```
+
+### Listenelement: `<li>`
+
+Einzelnes Listenelement. `<li>`-Elemente werden innerhalb von `<ul>` oder `<ol>` verwendet.
+
+---
 
 ## 4. Medien & Container
 
@@ -130,14 +153,20 @@ Regeln für Überschriften h1-h6:
 
 - `<div>`:  Der `<div>` Tag ist ein universeller Container, um andere HTML-Elemente zu gruppieren und logische Abschnitte auf einer Webseite zu erstellen, die dann mittels CSS gestylt oder mit JavaScript manipuliert werden können. Er hat keine eigene semantische Bedeutung, dient rein der Strukturierung und ist besonders nützlich für Layouts (z. B. mit Flexbox/Grid). Ohne Styling ist ein `<div>` unsichtbar (der `<div>`, nicht sein Inhalt!), wird aber als Block-Element behandelt, was einen Zeilenumbruch erzeugt und die volle Breite einnimmt
 
-    ```<div class="produkt-box">
-        <h2>Produkt A</h2>
-        <p>Beschreibung von Produkt A.</p>
-    </div>```
+```html
+<div class="produkt-box">
+    <h2>Produkt A</h2>
+    <p>Beschreibung von Produkt A.</p>
+</div>
+```
 
 - `<span>`: Ist dafür da um generischer (= es hat keine vordefinierte Bedeutung oder Darstellung. Es ist nur ein Werkzeug) Inline-Container für Textabschnitte ohne visuelle Veränderung zu markieren, damit sie mit CSS gestylt (Farbe, Schriftgröße) oder mit JavaScript manipuliert werden können, ohne den Textfluss zu unterbrechen. Das heißt: Im Gegensatz zu Block-Elementen wie `<div>`, bleibt der `<span>` in derselben Zeile, wo es platziert wird, und erzeugt keinen Zeilenumbruch. Sie funktionieren wie ein "Haken" (Hook) für gezielte Formatierungen innerhalb einer Zeile oder eines Absatzes. Wie dem `<div>` weist man dem `<span>` eine Klasse oder ID zu, um es mit CSS zu gestalten.
 
-    `<p>Dies ist ein normaler Satz. <span class="hervorhebung">Dieser Teil wird gelb hinterlegt</span> und hier geht der der Satz normal weiter.</p>`
+```html
+<p>Dies ist ein normaler Satz. <span class="hervorhebung">Dieser Teil wird gelb hinterlegt</span> und hier geht der Satz normal weiter.</p>
+```
+
+---
 
 ## 5. Semantische HTML-Tags (Layout)
 
@@ -156,7 +185,9 @@ Diese Tags befinden sich im <head>-Bereich des HTML-Dokuments. Sie sind für den
 
 - `<title>`: Legt den Titel der Webseite fest, der im Browser-Tab und als Hauptüberschrift in den Suchergebnissen erscheint. Er ist das wichtigste HTML-Element, um Suchmaschinen das Thema der Seite zu signalisieren.
 
-    `<title>HTML Glossar: SEO-Tags richtig nutzen</title>`
+```html
+<title>HTML Glossar: SEO-Tags richtig nutzen</title>
+```
 
 - `<meta name="description">`: Enthält eine kurze Zusammenfassung des Inhalts. Suchmaschinen nutzen diesen Text für das Snippet in den Suchergebnissen. Er dient als Werbetext, um die Klickrate (CTR) der Nutzer zu erhöhen.
 
@@ -186,55 +217,56 @@ Diese Tags befinden sich im <head>-Bereich des HTML-Dokuments. Sie sind für den
 
 ## Vollständiges html
 
-```<!DOCTYPE html>
-    <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Meine Beispielseite 2025</title>
-    </head>
-    <body>
-        <header>
-            <h1>Willkommen auf meiner Website</h1>
-            <nav>
-                <ul>
-                    <li><a href="#info">Informationen</a></li>
-                    <li><a href="https://dasisteinlink.de" target="_blank">Verlinkungzu</a></li>
-                </ul>
-            </nav>
-        </header>
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Meine Beispielseite 2025</title>
+</head>
+<body>
+    <header>
+        <h1>Willkommen auf meiner Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#info">Informationen</a></li>
+                <li><a href="https://dasisteinlink.de" target="_blank">Verlinkung zu</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-            <section id="info">
-                <h2>Über HTML</h2>
-                <p>HTML ist die <strong>Standard-Markupsprache</strong> für Webseiten. 
-                Mit HTML5 stehen uns viele <em>semantische Elemente</em> zur Verfügung.</p>
-                <p> Das ist ein Absatz mit p Tag. <strong>Das ist dick mit Strong-Taggemacht.</strong> für Webseiten. 
-                <em>Kursiver Text mit em Tag.</em></p>
-                
-                <hr>
-                
-                <h3>Das ist eine Liste:</h3>
-                <ul>
-                    <li>Enzelne Listen-Elemente</li>
-                    <li>Ein Texteditor (z. B. VS Code)</li>
-                    <li>Ein moderner Webbrowser</li>
-                    <li>Gute Dokumentationen</li>
-                </ul>
-            </section>
+    <main>
+        <section id="info">
+            <h2>Über HTML</h2>
+            <p>HTML ist die <strong>Standard-Markupsprache</strong> für Webseiten. 
+            Mit HTML5 stehen uns viele <em>semantische Elemente</em> zur Verfügung.</p>
+            <p>Das ist ein Absatz mit p Tag. <strong>Das ist dick mit Strong-Tag gemacht.</strong> für Webseiten. 
+            <em>Kursiver Text mit em Tag.</em></p>
+            
+            <hr>
+            
+            <h3>Das ist eine Liste:</h3>
+            <ul>
+                <li>Einzelne Listen-Elemente</li>
+                <li>Ein Texteditor (z.B. VS Code)</li>
+                <li>Ein moderner Webbrowser</li>
+                <li>Gute Dokumentationen</li>
+            </ul>
+        </section>
 
-            <section>
-                <div>
-                    <h2>H2 Überschrift: Ein Bild sagt mehr als Worte</h2>
-                    <h3>H3 Überschrift</h3>
-                    <p> hier drunter ist ein Bild mit img-Tag</p>
-                    <img src="beispiel.jpg" alt="Ein schönes Beispielbild" width="300">
-                </div>
-            </section>
-        </main>
+        <section>
+            <div>
+                <h2>H2 Überschrift: Ein Bild sagt mehr als Worte</h2>
+                <h3>H3 Überschrift</h3>
+                <p>Hier drunter ist ein Bild mit img-Tag</p>
+                <img src="beispiel.jpg" alt="Ein schönes Beispielbild" width="300">
+            </div>
+        </section>
+    </main>
 
-        <footer>
-            <p>&copy; Im Footer: 2025 Mein Web-Nachschlagewerk</p>
-        </footer>
-    </body>
-    </html>
+    <footer>
+        <p>&copy; Im Footer: 2025 Mein Web-Nachschlagewerk</p>
+    </footer>
+</body>
+</html>
 ```
