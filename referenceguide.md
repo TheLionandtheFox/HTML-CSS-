@@ -21,7 +21,7 @@ Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten:
 
 ## Übersicht Aufbau
 
-    <!DOCTYPE html>
+```<!DOCTYPE html>
     <html lang="de">
     <head>
         <title>Titel der Seite</title>
@@ -29,7 +29,7 @@ Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten:
     <body>
         <h1>Hallo Welt!</h1>
     </body>
-    </html>
+    </html>```
 
 1. Grundgerüst (Struktur-Tags)
 
@@ -37,7 +37,7 @@ Diese Tags bilden das Skelett jeder Webseite:
 
 ## <!DOCTYPE html>
 
-    <!DOCTYPE html>
+    `<!DOCTYPE html>`
 
 Die `<!DOCTYPE html>`- Keine Tag im eigentlichen Sinne, sondern die Deklaration für HTML5. Deklaration teilt dem Browser mit, dass es sich um ein **HTML5-Dokument** handelt.  
 Sie ist **kein HTML-Tag**, sondern eine notwendige Anweisung für den korrekten Darstellungsmodus.
@@ -51,22 +51,22 @@ Es umschließt alle anderen Elemente einer Webseite (außer der `<!DOCTYPE html>
 
 - **`<head>`**: Enthält Metainformationen (Titel, Scripte, CSS-Links), die nicht direkt auf der Seite erscheinen.
 
-    <html> 
+```<html> 
         <head>
             <meta charset="UTF-8">
             <title>Seitentitel</title>
         </head>
-    </html>
+    </html>```
 
 - **`<body>`**: Umschließt den gesamten sichtbaren Inhalt der Webseite, wie Texte, Überschriften, Bilder, Links, Videos, Tabellen, Listen usw. Er fungiert als Container für alles, was der Besucher der Website sieht.
 
-    <html>
+```<html>
         <head></head>
         <body>
             <h1>Willkommen</h1>
             <p>Dies ist der sichtbare Inhalt.</p>
         </body>
-    </html>
+    </html>```
 
 ## 2. Text-Strukturierung & Semantik
 
@@ -78,7 +78,7 @@ Regeln für Überschriften h1-h6:
 **Logische Hierarchie (h2-h6)**: Muss man der Reihenfolge folgen. Ein h2 ist unter h2, danach kommt h3 und so weiter. Vermeide Sprünge wie h2 -> h4.
 **Häufigkeit**: h2, h3, h4 usw. können mehrmals verwendet werden, solange es der Struktur dient. Oft reichen h1-h3 für die meisten Seiten aus. Ein h2 nach einem zB. h4 nur benutzen, wenn es neue Section anfängt.
 
-    <html>
+```<html>
         <head></head>
         <body>
             <h1>Hauptthema</h1>
@@ -88,7 +88,7 @@ Regeln für Überschriften h1-h6:
             <h5>Unterthema</h5>
             <h6>Unterthema</h6>
         </body>
-    </html>
+    </html>```
 
 - `<p>`: Definiert einen Textabsatz (Paragraph).
 - `<strong>`: Hebt Text fett hervor (starke semantische Betonung).
@@ -133,13 +133,48 @@ Regeln für Überschriften h1-h6:
         <p>Beschreibung von Produkt A.</p>
     </div>
 
-- `<span>`: Ist dafür da um generischer Inline-Container für Textabschnitte ohne visuelle Veränderung zu markieren, damit sie mit CSS gestylt (Farbe, Schriftgröße) oder mit JavaScript manipuliert werden können, ohne den Textfluss zu unterbrechen (im Gegensatz zu Block-Elementen wie `<div>`). Sie funktionieren wie ein "Haken" (Hook) für gezielte Formatierungen innerhalb einer Zeile oder eines Absatzes
+- `<span>`: Ist dafür da um generischer (= es hat keine vordefinierte Bedeutung oder Darstellung. Es ist nur ein Werkzeug) Inline-Container für Textabschnitte ohne visuelle Veränderung zu markieren, damit sie mit CSS gestylt (Farbe, Schriftgröße) oder mit JavaScript manipuliert werden können, ohne den Textfluss zu unterbrechen. Das heißt: Im Gegensatz zu Block-Elementen wie `<div>`, bleibt der `<span>` in derselben Zeile, wo es platziert wird, und erzeugt keinen Zeilenumbruch. Sie funktionieren wie ein "Haken" (Hook) für gezielte Formatierungen innerhalb einer Zeile oder eines Absatzes. Wie dem `<div>` weist man dem `<span>` eine Klasse oder ID zu, um es mit CSS zu gestalten.
 
-## 5. Semantische HTML5-Tags (Layout)
+    <p>Dies ist ein normaler Satz. <span class="hervorhebung">Dieser Teil wird gelb hinterlegt</span> und hier geht der der Satz normal weiter.</p>
 
-Diese Tags verbessern Struktur, Barrierefreiheit und SEO:
+## 5. Semantische HTML-Tags (Layout)
+
+Diese Tags verbessern Struktur, Barrierefreiheit und SEO (=Suchmaschinenoptimierung):
 
 - `<header>`: Kopfbereich einer Seite oder eines Abschnitts.
+
+Diese Tags befinden sich im <head>-Bereich des HTML-Dokuments. Sie sind für den Besucher unsichtbar, aber essenziell für die Kommunikation mit Suchmaschinen und dem Browser:
+<title>: Dies ist das wichtigste On-Page-SEO-Element. Er legt den Titel der Seite fest, der oben im Browser-Tab und als klickbare Überschrift in den Suchergebnissen (SERPs) angezeigt wird. Ein prägnanter Titel verbessert das Ranking und die Klickrate.
+
+- `<meta>`: Zusammenfassung, beeinflusst Klicks, obwohl Google oft eigene Beschreibungen generiert. 
+
+    <meta name=”name” content=”content”>
+## 5. Meta-Informationen & SEO
+
+- `<title>`: Legt den Titel der Webseite fest, der im Browser-Tab und als Hauptüberschrift in den Suchergebnissen erscheint. Er ist das wichtigste HTML-Element, um Suchmaschinen das Thema der Seite zu signalisieren.
+
+    <title>HTML Glossar: SEO-Tags richtig nutzen</title>
+
+- `<meta name="description">`: Enthält eine kurze Zusammenfassung des Inhalts. Suchmaschinen nutzen diesen Text für das Snippet in den Suchergebnissen. Er dient als Werbetext, um die Klickrate (CTR) der Nutzer zu erhöhen.
+
+    <meta name="description" content="Ein umfassendes Glossar über HTML-Tags, die Ihre Suchmaschinenoptimierung verbessern.">
+
+- `<meta name="viewport">`: Dieser Tag ist zwingend erforderlich für das responsive Design. Er sorgt dafür, dass die Webseite auf Mobilgeräten korrekt skaliert wird, was ein kritischer Rankingfaktor für Google ist.
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+- `<meta name="robots">`: Gibt Anweisungen an Suchmaschinen-Crawler, ob eine Seite indexiert werden soll oder ob Links auf der Seite verfolgt werden dürfen.
+
+    <meta name="robots" content="index, follow">
+
+- `<link rel="canonical">`: Verweist auf die Original-URL einer Webseite. Dies verhindert Probleme mit doppeltem Inhalt (Duplicate Content), indem es Google mitteilt, welche Version der Seite in den Suchindex gehört.
+
+    <link rel="canonical" href="www.deineseite.de">
+
+- `<meta charset="UTF-8">`: Legt die Zeichenkodierung fest. Dies stellt sicher, dass Umlaute und Sonderzeichen weltweit in jedem Browser korrekt dargestellt werden und verhindert Darstellungsfehler.
+
+    <meta charset="UTF-8">
+
 - `<nav>`: Navigationsbereich.
 - `<main>`: Hauptinhalt der Seite.
 - `<section>`: Thematischer Abschnitt.
@@ -148,7 +183,7 @@ Diese Tags verbessern Struktur, Barrierefreiheit und SEO:
 
 ## Vollständiges html
 
-    <!DOCTYPE html>
+```<!DOCTYPE html>
     <html lang="de">
     <head>
         <meta charset="UTF-8">
@@ -198,4 +233,4 @@ Diese Tags verbessern Struktur, Barrierefreiheit und SEO:
             <p>&copy; Im Footer: 2025 Mein Web-Nachschlagewerk</p>
         </footer>
     </body>
-    </html>
+    </html>```
