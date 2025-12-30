@@ -10,7 +10,8 @@ HTML ist eine Baumstruktur mit einem `<html>`-Tag als **Wurzelelement (Root-Elem
 
 Elemente werden durch Tags (`< >`) definiert, die oft Paare bilden (Start- und End-Tag wie `<p>...</p>`).
 
-Wichtige semantische Strukturelemente sind:
+#### Wichtige semantische Strukturelemente sind
+
 - Überschriften (`<h1>` bis `<h6>`)
 - Absätze (`<p>`)
 - Listen (`<ul>`, `<ol>`)
@@ -27,7 +28,8 @@ Jedes gültige HTML5-Dokument **muss** die Elemente `html`, `head` und `body` en
 
 Die `<!DOCTYPE html>`-Deklaration muss ganz am Anfang der Datei stehen, um dem Browser mitzuteilen, dass es sich um HTML5 handelt, und um eine korrekte Darstellung sicherzustellen.
 
-Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten:
+#### Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten
+
 - `<!DOCTYPE html>`
 - `<html>`
 - `<head>` (mit `<meta charset="UTF-8">` und `<title>`)
@@ -108,7 +110,7 @@ Diese Tags geben dem Inhalt Bedeutung und helfen Suchmaschinen (SEO).
 
 Für Überschriften. `<h1>` ist die wichtigste und sollte nur einmal pro Seite verwendet werden, da sie das Hauptthema darstellt.
 
-#### Regeln für Überschriften h1-h6:
+#### Regeln für Überschriften h1-h6
 
 - **h1 einmal pro Seite**: Die wichtigste Überschrift, der Titel der Seite, sollte nur einmal vorkommen, um das Hauptthema klar zu definieren.
 - **Logische Hierarchie (h2-h6)**: Man muss der Reihenfolge folgen. Ein h2 ist unter h1, danach kommt h3 und so weiter. Vermeide Sprünge wie h2 → h4.
