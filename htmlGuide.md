@@ -1,21 +1,21 @@
-# HTML Erklärt
+# HTML erklärt
 
 > **Status:** Noch in Arbeit
 
-## Wichtige Merkmale
+## Schnelle übersicht über die wichtigsten Merkmale
 
 ### Struktur
 
 HTML ist eine Baumstruktur mit einem `<html>`-Tag als **Wurzelelement (Root-Element)**. Innerhalb von `<html>` befinden sich immer genau zwei Bereiche: `<head>` (Metadaten) und `<body>` (sichtbare Inhalte).
 
-Elemente werden durch Tags (`< >`) definiert, die oft Paare bilden (Start- und End-Tag wie `<p>...</p>`).
+Elemente werden durch Tags (`< >`) definiert, die oft Paare bilden (Start- und End-Tag wie zum Beispiel `<p>...</p>`).
 
 #### Wichtige semantische Strukturelemente sind
 
 - Überschriften (`<h1>` bis `<h6>`)
 - Absätze (`<p>`)
 - Listen (`<ul>`, `<ol>`)
-- Abschnitte (`<section>`)
+- Abschnitte (`<section>`, `<div>`)
 - Navigation (`<nav>`)
 
 ### Sprachfestlegung
@@ -26,46 +26,15 @@ Es ist Best Practice, das Attribut `lang` zu verwenden (`<html lang="de">`), um 
 
 Jedes gültige HTML5-Dokument **muss** die Elemente `html`, `head` und `body` enthalten. Wenn man sie vergisst, ergänzt sie der Browser automatisch (sie werden nicht automatisch in die Datei eingefügt, sondern nur im Browser intern ergänzt).
 
+#### `<!DOCTYPE html>`
+
 Die `<!DOCTYPE html>`-Deklaration muss ganz am Anfang der Datei stehen, um dem Browser mitzuteilen, dass es sich um HTML5 handelt, und um eine korrekte Darstellung sicherzustellen.
 
-#### Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten
-
-- `<!DOCTYPE html>`
-- `<html>`
-- `<head>` (mit `<meta charset="UTF-8">` und `<title>`)
-- `<body>`
-
-Diese Elemente definieren das Dokument, stellen Metadaten bereit (wie den Titel für Browser-Tabs/Suchmaschinen) und umschließen den sichtbaren Inhalt. Auch semantische Tags wie `<header>`, `<nav>`, `<main>`, `<footer>` und Überschriften (`<h1>` bis `<h6>`) sind für Struktur und SEO entscheidend.
-
-## Übersicht Aufbau
-
-```html
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <title>Titel der Seite</title>
-</head>
-<body>
-    <h1>Hallo Welt!</h1>
-</body>
-</html>
-```
-
----
-
-## 1. Grundgerüst (Struktur-Tags)
-
-Diese Tags bilden das Skelett jeder Webseite.
-
-### `<!DOCTYPE html>`
-
 ```html
 <!DOCTYPE html>
 ```
 
-Die `<!DOCTYPE html>`-Deklaration ist **kein Tag** im eigentlichen Sinne, sondern eine notwendige Anweisung für den Browser. Sie teilt dem Browser mit, dass es sich um ein **HTML5-Dokument** handelt und stellt den korrekten Darstellungsmodus sicher.
-
-### `<html>`-Tag
+#### `<html>`-Tag
 
 Das Wurzelelement umschließt das gesamte Dokument. Es signalisiert dem Browser, dass der gesamte darin enthaltene Code als HTML interpretiert werden soll. Es hat einen öffnenden und schließenden Tag und umschließt alle anderen Elemente einer Webseite (außer der `<!DOCTYPE html>`-Deklaration).
 
@@ -86,13 +55,40 @@ Enthält Metainformationen (Titel, Scripte, CSS-Links), die nicht direkt auf der
 </html>
 ```
 
+## Übersicht Aufbau
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Titel der Seite</title>
+</head>
+<body>
+    <h1>Hallo Welt!</h1>
+</body>
+</html>
+```
+
+---
+
+## 1. Grundgerüst (Struktur-Tags)
+
+Diese Tags bilden das Skelett jeder Webseite. Jedes HTML5-Dokument **sollte** die Basisstruktur enthalten:
+
+- `<!DOCTYPE html>`
+- `<html>`
+- `<head>` (mit `<meta charset="UTF-8">` und `<title>`)
+- `<body>`
+
+Diese Elemente definieren das Dokument, stellen Metadaten bereit (wie den Titel für Browser-Tabs/Suchmaschinen) und umschließen den sichtbaren Inhalt. Auch semantische Tags wie `<header>`, `<nav>`, `<main>`, `<footer>` und Überschriften (`<h1>` bis `<h6>`) sind für Struktur und SEO entscheidend.
+
 ### Meta-Informationen & SEO
 
-Diese Tags befinden sich im `<head>`-Bereich des HTML-Dokuments. Sie sind für den Besucher unsichtbar, aber essenziell für die Kommunikation mit Suchmaschinen und dem Browser.
+Diese Tags befinden sich im `<head>`-Bereich des HTML-Dokuments. Sie sind für den Besucher unsichtbar, aber essenziell für die Kommunikation mit Suchmaschinen und dem Browser. Sie geben Informationen über den Inhalt der Seite, damit diese besser verstanden, indexiert und in den Suchergebnissen (Snippet) korrekt angezeigt werden können.
 
 #### `<title>`
 
-Legt den Titel der Webseite fest, der im Browser-Tab und als Hauptüberschrift in den Suchergebnissen erscheint. Er ist das wichtigste HTML-Element, um Suchmaschinen das Thema der Seite zu signalisieren.
+Legt den Titel der Webseite fest, der im Browser-Tab und als Hauptüberschrift in den Suchergebnissen erscheint. Er ist das wichtigste HTML-Element, um Suchmaschinen das Thema der Seite zu signalisieren. Der `<title>` erscheint als Beschriftung oben im Browser-Tab (Registerkarte) und in der Titelleiste des Browserfensters. Er ist auch der Titel, der in Suchmaschinenergebnissen (SERPs) und bei Lesezeichen angezeigt wird, aber nicht direkt auf der Webseite selbst sichtbar ist.
 
 ```html
 <title>HTML Glossar: SEO-Tags richtig nutzen</title>
