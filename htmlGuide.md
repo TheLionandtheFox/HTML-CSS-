@@ -118,12 +118,12 @@ Gibt Anweisungen an Suchmaschinen-Crawler, ob eine Seite indexiert werden soll o
 <meta name="robots" content="index, follow">
 ```
 
-#### `<link rel="canonical">`
+#### `<link rel="stylesheet">`
 
-Verweist auf die Original-URL einer Webseite. Dies verhindert Probleme mit doppeltem Inhalt (Duplicate Content), indem es Google mitteilt, welche Version der Seite in den Suchindex gehört.
+Verknüpft das Dokument mit externen Ressourcen, meist CSS-Dateien. Wichtige Merkmale: Steht im `<head>`. Das Attribut rel="stylesheet" ist für CSS zwingend erforderlich.
 
 ```html
-<link rel="canonical" href="https://www.deineseite.de">
+<link rel="stylesheet" href="style.css">
 ```
 
 #### `<meta charset="UTF-8">`
@@ -567,4 +567,42 @@ Definiert eine Standard-Datenzelle in einer Tabelle.
     </footer>
 </body>
 </html>
+```
+
+---
+
+## Weiterte Tags
+
+## 8. Styling & Scripting
+
+### `<style>`
+
+Ermöglicht es, CSS-Regeln direkt innerhalb des HTML-Dokuments zu schreiben.
+
+**Wichtige Merkmale**: Sollte sparsam verwendet werden; externe Dateien via `<link>` sind meist besser.
+
+```html
+<style>
+    body { background-color: #f0f0f0; }
+</style>
+```
+
+### `<script>`
+
+Bindet JavaScript-Code ein, um die Seite interaktiv zu machen.
+
+**Wichtige Merkmale**: Kann internen Code enthalten oder über `src` eine externe Datei laden.
+
+```html
+<script src="script.js" defer></script>
+```
+
+### `<noscript>`
+
+Definiert einen Inhalt, der nur angezeigt wird, wenn JavaScript im Browser deaktiviert ist.
+
+**Wichtige Merkmale**: Wichtig für die Barrierefreiheit und um Nutzer auf fehlende Funktionen hinzuweisen.
+
+```html
+<noscript>Bitte aktiviere JavaScript, um diese Seite zu nutzen.</noscript>
 ```
