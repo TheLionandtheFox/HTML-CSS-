@@ -606,3 +606,65 @@ Definiert einen Inhalt, der nur angezeigt wird, wenn JavaScript im Browser deakt
 ```html
 <noscript>Bitte aktiviere JavaScript, um diese Seite zu nutzen.</noscript>
 ```
+
+---
+
+## 9. Interaktive Elemente
+
+### `<details>`
+
+Erstellt einen ausklappbaren Bereich, den der Nutzer öffnen und schließen kann.
+
+**Wichtige Merkmale**: Funktioniert ohne JavaScript. Wird oft für FAQs verwendet.
+
+```html
+<details>
+    <summary>Mehr Informationen klicken</summary>
+    <p>Hier sind die versteckten Details.</p>
+</details>
+```
+
+### `<summary>`
+
+Definiert die sichtbare Beschriftung für ein `<details>`-Element.
+
+**Wichtige Merkmale**: Muss das erste Kindelement innerhalb von `<details>` sein.
+
+```html
+<summary>Frage: Was ist HTML?</summary>
+```
+
+### `<dialog>`
+
+Definiert ein Dialogfenster oder eine Overlay-Box (Modal).
+
+**Wichtige Merkmale**: Kann mit JavaScript-Methoden wie `showModal()` oder `close()` gesteuert werden.
+
+```html
+<dialog open>
+    <p>Dies ist ein wichtiges Fenster!</p>
+    <button>Schließen</button>
+</dialog>
+```
+
+### `<progress>`
+
+Zeigt den Fortschritt einer Aufgabe an (Ladebalken).
+
+**Wichtige Merkmale**: Benötigt die Attribute `value` (aktueller Stand) und `max` (Zielwert).
+
+```html
+<progress value="70" max="100"></progress>
+```
+
+### `<meter>`
+
+Stellt einen skalaren Wert innerhalb eines bekannten Bereichs dar (z.B. Speicherplatzbelegung).
+
+**Wichtige Merkmale**: Im Gegensatz zu `<progress>` geht es hier um statische Messwerte, nicht um einen Prozessfortschritt.
+
+```html
+Speicherauslastung: <meter value="0.6">60%</meter>
+```
+
+---
