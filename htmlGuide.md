@@ -929,3 +929,56 @@ Gruppiert verwandte `<option>`-Elemente innerhalb eines `<select>`-Menüs.
 ```
 
 ---
+
+## 14. Erweiterte Tabellen-Elemente
+
+### `<caption>`
+
+Definiert die Überschrift einer Tabelle.
+
+**Wichtige Merkmale**: Muss unmittelbar nach dem öffnenden `<table>`-Tag stehen.
+
+```html
+<table>
+    <caption>Monatsumsatz 2025</caption>
+    <tr><td>...</td></tr>
+</table>
+```
+
+### `<thead>`
+
+Gruppiert die Kopfzeilen einer Tabelle.
+
+**Wichtige Merkmale**: Hilfreich für das Styling und sorgt dafür, dass beim Drucken langer Tabellen der Kopf auf jeder Seite wiederholt wird.
+
+```html
+<thead>
+    <tr><th>Name</th><th>Alter</th></tr>
+</thead>
+```
+
+### `<tbody>`
+
+Gruppiert den eigentlichen Datenbereich einer Tabelle.
+
+**Wichtige Merkmale**: Trennt den Inhalt logisch vom Kopf (`<thead>`) und Fuß (`<tfoot>`).
+
+```html
+<tbody>
+    <tr><td>Max</td><td>25</td></tr>
+</tbody>
+```
+
+### `<tfoot>`
+
+Gruppiert die Zusammenfassungs- oder Fußzeilen einer Tabelle.
+
+**Wichtige Merkmale**: Wird oft für Summenzeilen am Ende einer Tabelle verwendet.
+
+```html
+<tfoot>
+    <tr><td>Gesamt</td><td>100 €</td></tr>
+</tfoot>
+```
+
+---
