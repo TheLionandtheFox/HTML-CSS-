@@ -1010,7 +1010,7 @@ Gibt die Aussprache oder Erklärung der Zeichen innerhalb eines `<ruby>`-Element
 ### `<rp>`
 
 Bietet Fallback-Klammern für Browser, die Ruby-Annotationen nicht unterstützen.
-Wichtige Merkmale: Inhalt wird nur angezeigt, wenn der Browser <ruby> nicht versteht, z. B. Klammern um die Aussprache.
+Wichtige Merkmale: Inhalt wird nur angezeigt, wenn der Browser `<ruby>` nicht versteht, z. B. Klammern um die Aussprache.
 
 **Wichtige Merkmale**: Inhalt wird nur angezeigt, wenn der Browser `<ruby>` nicht versteht.
 
