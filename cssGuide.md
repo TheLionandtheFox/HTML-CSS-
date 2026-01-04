@@ -95,7 +95,7 @@ CSS-Regeln werden nach ihrer Spezifität angewendet. Je spezifischer, desto höh
 
 1. **Inline-Styles** (höchste Priorität): `style="color: red"`
 2. **IDs**: `#header { color: red }`
-3. **Klassen, Attribute, Pseudo-Klassen**: `.button { color: red} `, `[type="text"]`, `:hover`
+3. **Klassen, Attribute, Pseudo-Klassen**: `.button { color: red}`, `[type="text"]`, `:hover`
 4. **Elemente**: `p { color: red }`, `div { color: red }`
 
 ```css
@@ -218,7 +218,7 @@ Wählt nur `<p>`, die direkte Kinder von `<div>` sind.
 
 ### Geschwister-Selektor `+`
 
-Wählt das **erste** Element aus, das direkt nach einem anderen folgt.
+Wählt **genau das erste** Element aus, das **direkt** nach einem anderen Element steht — also den **unmittelbaren Nachbarn** im gleichen Elternelement.
 
 ```css
 h2 + p {
@@ -228,9 +228,18 @@ h2 + p {
 
 Wählt das erste `<p>` nach einem `<h2>`.
 
+```html
+<h2>Überschrift</h2>
+<p>Absatz 1</p>
+<p>Absatz 2</p>
+```
+
+Nur „Absatz 1“ wird ausgewählt, weil er direkt nach dem `<h2>` folgt.
+„Absatz 2“ wird nicht angesprochen, da er nicht unmittelbar auf `<h2>` folgt.
+
 ### Allgemeiner Geschwister-Selektor `~`
 
-Wählt **alle** Geschwister-Elemente aus, die nach einem Element kommen.
+Wählt **alle** Geschwister-Elemente aus, die nach einem Element kommen. Unabhängig davon, ob sie direkt oder erst später im Dokument stehen.
 
 ```css
 h2 ~ p {
@@ -238,64 +247,15 @@ h2 ~ p {
 }
 ```
 
-### Attribut-Selektor
-
-Wählt Elemente basierend auf ihren Attributen aus.
-
-```css
-/* Element mit bestimmtem Attribut */
-input[type="text"] {
-    border: 1px solid gray;
-}
-
-/* Element mit Attribut, das einen Wert enthält */
-a[href*="google"] {
-    color: red;
-}
+```html
+<h2>Überschrift</h2>
+<p>Absatz 1</p>
+<p>Absatz 2</p>
 ```
 
-### Pseudo-Klassen
+Hier werden „Absatz 1“ und „Absatz 2“ beide ausgewählt,
+weil sie beide nach dem `<h2>` im selben Elternelement vorkommen.
+Nochmal zum verdeutlichen:
+`+` → nur den direkt folgenden Nachbarn
+`~` → alle nachfolgenden Geschwister
 
-Wählen Elemente in einem bestimmten Zustand aus.
-
-```css
-/* Link-Zustände */
-a:link { color: blue; }        /* Unbesuchter Link */
-a:visited { color: purple; }   /* Besuchter Link */
-a:hover { color: red; }        /* Maus darüber */
-a:active { color: orange; }    /* Beim Klicken */
-
-/* Andere häufige Pseudo-Klassen */
-input:focus { border-color: blue; }  /* Element hat Fokus */
-li:first-child { font-weight: bold; } /* Erstes Kind */
-li:last-child { border: none; }       /* Letztes Kind */
-p:nth-child(2) { color: red; }        /* Zweites Kind */
-```
-
-### Pseudo-Elemente
-
-Wählen einen bestimmten Teil eines Elements aus.
-
-```css
-/* Erster Buchstabe */
-p::first-letter {
-    font-size: 2em;
-    color: red;
-}
-
-/* Erste Zeile */
-p::first-line {
-    font-weight: bold;
-}
-
-/* Inhalt vor/nach Element einfügen */
-p::before {
-    content: "→ ";
-}
-
-p::after {
-    content: " ←";
-}
-```
-
----
