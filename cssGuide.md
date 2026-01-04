@@ -14,3 +14,45 @@
 - **Spezifität**: Genauere Selektoren haben Vorrang vor allgemeinen.
 
 ---
+
+## Grundlegende CSS-Syntax
+
+```css
+selektor {
+    eigenschaft: wert;
+    eigenschaft: wert;
+}
+```
+
+**Beispiel:**
+
+```css
+p {
+    color: blue;
+    font-size: 16px;
+}
+```
+
+---
+
+## CSS in HTML einbinden
+
+### 1. Inline-CSS (direkt im HTML-Element)
+
+```html
+<p style="color: red; font-size: 20px;">Text</p>
+```
+
+**Nachteile**: Nicht wiederverwendbar, schlechte Wartbarkeit
+
+### 2. Internes CSS (im `<style>`-Tag)
+
+```html
+<head>
+    <style>
+        p { color: blue; }
+    </style>
+</head>
+```
+
+**Verwendung**: Für einzelne Seiten mit spezifischem Styling
