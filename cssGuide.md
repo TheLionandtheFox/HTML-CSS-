@@ -263,19 +263,38 @@ Nochmal zum verdeutlichen:
 
 ### Attribut-Selektor
 
-Wählt Elemente basierend auf ihren Attributen aus.
+Wählt Elemente basierend auf ihren Attributen aus. Das heißt **je nachdem, ob sie ein bestimmtes Attribut (und ggf. einen bestimmten Attributwert)** besitzen.  
+Attribut-Selektoren sind sehr nützlich, um Elemente gezielt nach Eigenschaften zu stylen – etwa `type`, `href`, `title`, `lang`, usw.
+
+```html
+<input type="text">
+<input type="password"> <!-- wird NICHT ausgewählt -->
+```
 
 ```css
 /* Element mit bestimmtem Attribut */
 input[type="text"] {
     border: 1px solid gray;
 }
+```
 
+Wählt nur `<input>`-Elemente aus, deren Attribut type genau den Wert text hat, also z. B.:
+
+```html
+<a href="https://www.google.com">Google</a>
+<a href="https://news.google.de">Google News</a>
+<a href="https://example.com">Beispiel</a> <!-- wird NICHT ausgewählt -->
+
+```
+
+```css
 /* Element mit Attribut, das einen Wert enthält */
 a[href*="google"] {
     color: red;
 }
 ```
+
+Wählt alle `<a>` -Elemente aus, deren Attribut href irgendwo „google“ enthält
 
 ### Pseudo-Klassen
 
