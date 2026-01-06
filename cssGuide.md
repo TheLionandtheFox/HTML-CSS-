@@ -424,8 +424,102 @@ Anders funktioniert es nicht richtig wegen der CSS-Kaskade!
 
 ### Andere häufige Pseudo-Klassen
 
+#### `:focus` - Element hat Fokus
+
+Wird aktiv, wenn ein Element ausgewählt ist (z.B. wenn du in ein Eingabefeld klickst).
+
 ```css
-input:focus { border-color: blue; }  /* Element hat Fokus */
+input:focus {
+    border-color: blue;
+    outline: 2px solid blue;
+    background-color: lightyellow;
+}
+
+textarea:focus {
+    border-color: green;
+}
+```
+
+```html
+<input type="text" placeholder="Klick mich an!">
+```
+
+**Wenn du ins Eingabefeld klickst**, wird es blau umrandet.
+
+**Praxis-Beispiel:** Bessere Sichtbarkeit für Barrierefreiheit
+
+```css
+button:focus {
+    outline: 3px solid orange;
+    outline-offset: 2px;
+}
+```
+
+---
+
+#### `:checked` - Angekreuzt
+
+Für Checkboxen und Radio-Buttons, die aktiviert sind.
+
+```css
+input[type="checkbox"]:checked {
+    background-color: green;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: blue;
+}
+```
+
+```html
+<input type="checkbox" id="agree">
+<label for="agree">Ich stimme zu</label>
+```
+
+**Praxis-Beispiel:** Custom Checkbox-Design
+
+```css
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    color: white;
+}
+```
+
+---
+
+#### `:disabled` - Deaktiviert
+
+Für Formularelemente, die nicht benutzt werden können.
+
+```css
+input:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+```
+
+```html
+<input type="text" disabled placeholder="Nicht editierbar">
+```
+
+---
+
+#### `:enabled` - Aktiviert
+
+Das Gegenteil von `:disabled`.
+
+```css
+input:enabled {
+    background-color: white;
+}
+```
+
+---
+
+
+```css
 li:first-child { font-weight: bold; } /* Erstes Kind */
 li:last-child { border: none; }       /* Letztes Kind */
 p:nth-child(2) { color: red; }        /* Zweites Kind */
