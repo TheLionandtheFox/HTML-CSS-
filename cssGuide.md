@@ -727,6 +727,74 @@ p:only-of-type {
 
 ---
 
+### Negation und andere
+
+#### `:not()` - Negation
+
+Wählt alle Elemente aus, die **nicht** dem Selektor entsprechen.
+
+```css
+/* Alle Absätze außer die mit Klasse "special" */
+p:not(.special) {
+    color: gray;
+}
+
+/* Alle Links außer die zu eigener Domain */
+a:not([href*="meine-domain.de"]) {
+    color: red;
+}
+
+/* Alle Inputs außer Checkboxen */
+input:not([type="checkbox"]) {
+    border: 1px solid gray;
+}
+```
+
+**Praxis-Beispiel:** Alle Buttons außer der mit Klasse "primary"
+
+```css
+button:not(.primary) {
+    background-color: gray;
+}
+```
+
+---
+
+#### `:empty` - Leeres Element
+
+Wählt Elemente aus, die **keinen** Inhalt haben.
+
+```css
+div:empty {
+    display: none;
+}
+
+p:empty::before {
+    content: "Dieser Absatz ist leer";
+    color: red;
+}
+```
+
+```html
+<div></div>  <!-- Wird ausgeblendet -->
+<div> </div> <!-- NICHT leer (Leerzeichen zählt!) -->
+```
+
+---
+
+#### `:root` - Wurzelelement
+
+Wählt das Wurzelelement aus (bei HTML ist das `<html>`). Wird oft für CSS-Variablen verwendet.
+
+```css
+:root {
+    --primary-color: blue;
+    --spacing: 20px;
+}
+```
+
+---
+
 ### 2. Pseudo-Elemente (`::`)
 
 Pseudo-Elemente sprechen **Teile** von Elementen an oder fügen **virtuellen Inhalt** hinzu, der im HTML nicht existiert. Sie werden verwendet, um bestimmte Teile eines Elements oder künstlich eingefügten Inhalt zu stylen, der im HTML nicht als eigenes Tag vorhanden ist. Typische Beispiele sind der erste Buchstabe, die erste Zeile eines Textes oder zusätzlicher Inhalt vor bzw. nach einem Element.
