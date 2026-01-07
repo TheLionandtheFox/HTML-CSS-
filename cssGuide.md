@@ -831,8 +831,8 @@ p::before {
     color: red;
 }
 ```
-Ein Praxis-Beispiel: **Icons vor Links**
 
+Ein Praxis-Beispiel: **Icons vor Links**
 
 ```css
 a.external::before {
@@ -870,6 +870,63 @@ Ein Praxis-Beispiel: **Nummerierung**
     color: blue;
 }
 ```
+
+---
+
+### `::after` - Inhalt nach Element
+
+Fügt Inhalt **nach** dem eigentlichen Element-Inhalt ein.
+
+```css
+p::after {
+    content: " ←";
+    color: red;
+}
+```
+
+```html
+<p>Dies ist ein Absatz</p>
+```
+
+**Ergebnis:** Dies ist ein Absatz ←
+
+Praxis-Beispiel: **Clearfix für Floats**
+
+```css
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+```
+
+Praxis-Beispiel: **Button mit Pfeil**
+
+```css
+.button::after {
+    content: " →";
+    transition: transform 0.3s;
+}
+
+.button:hover::after {
+    transform: translateX(5px);
+}
+```
+
+Praxis-Beispiel: **Pflichtfelder markieren**
+
+```css
+.required::after {
+    content: " *";
+    color: red;
+}
+```
+
+```html
+<label class="required">Name</label>
+```
+
+Ergebnis: **Name**
 
 ---
 
