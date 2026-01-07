@@ -831,6 +831,47 @@ p::before {
     color: red;
 }
 ```
+Ein Praxis-Beispiel: **Icons vor Links**
+
+
+```css
+a.external::before {
+    content: "🔗 ";
+}
+
+a.pdf::before {
+    content: "📄 ";
+}
+```
+
+Ein Praxis-Beispiel: **Dekorative Elemente**
+
+```css
+.quote::before {
+    content: """;
+    font-size: 3em;
+    color: lightgray;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+}
+```
+
+Ein Praxis-Beispiel: **Nummerierung**
+
+```css
+.chapter {
+    counter-increment: chapter;
+}
+
+.chapter::before {
+    content: "Kapitel " counter(chapter) ": ";
+    font-weight: bold;
+    color: blue;
+}
+```
+
+---
 
 ```css
 /* Erster Buchstabe */
