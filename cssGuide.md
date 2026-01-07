@@ -799,6 +799,39 @@ Wählt das Wurzelelement aus (bei HTML ist das `<html>`). Wird oft für CSS-Vari
 
 Pseudo-Elemente sprechen **Teile** von Elementen an oder fügen **virtuellen Inhalt** hinzu, der im HTML nicht existiert. Sie werden verwendet, um bestimmte Teile eines Elements oder künstlich eingefügten Inhalt zu stylen, der im HTML nicht als eigenes Tag vorhanden ist. Typische Beispiele sind der erste Buchstabe, die erste Zeile eines Textes oder zusätzlicher Inhalt vor bzw. nach einem Element.
 
+### `::before` - Inhalt vor Element
+
+Fügt Inhalt **vor** dem eigentlichen Element-Inhalt ein.
+
+```css
+p::before {
+    content: "→ ";
+    color: blue;
+    font-weight: bold;
+}
+```
+
+```html
+<p>Dies ist ein Absatz</p>
+```
+
+**Ergebnis:** → Dies ist ein Absatz
+
+**Das `content`-Property ist PFLICHT!** Ohne `content` erscheint nichts.
+
+```css
+/* Funktioniert NICHT */
+p::before {
+    color: red;
+}
+
+/* Funktioniert */
+p::before {
+    content: "";  /* Auch leerer String ist okay */
+    color: red;
+}
+```
+
 ```css
 /* Erster Buchstabe */
 p::first-letter {
@@ -810,15 +843,5 @@ p::first-letter {
 p::first-line {
     font-weight: bold;
 }
-
-/* Inhalt vor/nach Element einfügen */
-p::before {
-    content: "→ ";
-}
-
-p::after {
-    content: " ←";
-}
-```
 
 ---
