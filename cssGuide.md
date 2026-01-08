@@ -1048,3 +1048,104 @@ a:visited::after {
 ```
 
 ---
+
+## Vollständiges Praxis-Beispiel
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <style>
+        /* Liste mit Nummerierung per ::before */
+        .custom-list {
+            counter-reset: item;
+            list-style: none;
+        }
+        
+        .custom-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+        }
+        
+        .custom-list li::before {
+            content: counter(item) ". ";
+            font-weight: bold;
+            color: blue;
+            margin-right: 5px;
+        }
+        
+        /* Zebra-Streifen mit :nth-child */
+        .custom-list li:nth-child(odd) {
+            background-color: #f0f0f0;
+            padding: 5px;
+        }
+        
+        /* Letztes Element ohne unteren Rand */
+        .custom-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Hover-Effekt */
+        .custom-list li:hover {
+            background-color: #e0e0e0;
+            transform: translateX(5px);
+            transition: all 0.3s;
+        }
+        
+        /* Links mit Icons */
+        a[href^="http"]::before {
+            content: "🔗 ";
+        }
+        
+        a[href$=".pdf"]::before {
+            content: "📄 ";
+        }
+        
+        /* Textmarkierung */
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+        
+        /* Erster Absatz besonders */
+        p:first-of-type::first-letter {
+            font-size: 2em;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Dies ist der erste Absatz mit großem Anfangsbuchstaben.</p>
+    <p>Dies ist der zweite Absatz.</p>
+    
+    <ul class="custom-list">
+        <li>Erster Punkt</li>
+        <li>Zweiter Punkt</li>
+        <li>Dritter Punkt</li>
+        <li>Vierter Punkt</li>
+    </ul>
+    
+    <a href="https://example.com">Externer Link</a>
+    <a href="dokument.pdf">PDF-Datei</a>
+</body>
+</html>
+```
+
+---
+
+## Zusammenfassung: Wann was verwenden?
+
+| Situation | Verwende |
+| ----------- | ---------- |
+| Hover-Effekt | `:hover` |
+| Fokus in Formular | `:focus` |
+| Erstes/Letztes Element | `:first-child` / `:last-child` |
+| Jedes zweite Element | `:nth-child(even)` |
+| Icon vor Text einfügen | `::before` |
+| Dekorative Elemente | `::before` / `::after` |
+| Erster Buchstabe groß | `::first-letter` |
+| Markierten Text stylen | `::selection` |
+| Platzhalter in Input | `::placeholder` |
+
+---
