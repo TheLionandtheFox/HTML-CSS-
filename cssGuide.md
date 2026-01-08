@@ -974,3 +974,52 @@ p::first-line {
 
 ---
 
+### `::selection` - Markierter Text
+
+Stylt Text, den der Benutzer **markiert** (mit der Maus).
+
+```css
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+/* Für Firefox */
+::-moz-selection {
+    background-color: yellow;
+    color: black;
+}
+```
+
+**Praxis-Beispiel:** Corporate Identity
+
+```css
+::selection {
+    background-color: #3498db;
+    color: white;
+}
+```
+
+---
+
+### `::placeholder` - Platzhalter-Text
+
+Stylt den Platzhalter-Text in Eingabefeldern.
+
+```css
+input::placeholder {
+    color: lightgray;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+input:focus::placeholder {
+    opacity: 0.3;
+}
+```
+
+```html
+<input type="text" placeholder="Gib deinen Namen ein">
+```
+
+---
