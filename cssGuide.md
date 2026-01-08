@@ -956,11 +956,21 @@ p::first-letter {
 
 ---
 
+### `::first-line` - Erste Zeile
+
+Stylt die **erste Zeile** eines Elements.
+
 ```css
-/* Erste Zeile */
 p::first-line {
     font-weight: bold;
+    color: blue;
+    text-transform: uppercase;
 }
 ```
 
+**Wichtig:** Die erste Zeile ändert sich, wenn das Browserfenster verkleinert wird!
+
+**Erlaubte Eigenschaften:** Schrift, Farbe, Hintergrund, Text-Decoration, line-height
+
 ---
+
