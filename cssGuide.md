@@ -1149,3 +1149,84 @@ a:visited::after {
 | Platzhalter in Input | `::placeholder` |
 
 ---
+
+## 2. Farben & Hintergründe
+
+### `color`
+
+Setzt die Textfarbe.
+
+```css
+p {
+    color: red;              /* Farbname */
+    color: #ff0000;          /* Hexadezimal */
+    color: rgb(255, 0, 0);   /* RGB */
+    color: rgba(255, 0, 0, 0.5); /* RGB mit Transparenz */
+}
+```
+
+### `background-color`
+
+Setzt die Hintergrundfarbe.
+
+```css
+div {
+    background-color: lightblue;
+}
+```
+
+### `background-image`
+
+Setzt ein Hintergrundbild.
+
+```css
+body {
+    background-image: url('bild.jpg');
+}
+```
+
+### `background-size`
+
+Steuert die Größe des Hintergrundbilds.
+
+```css
+div {
+    background-size: cover;      /* Füllt Container aus */
+    background-size: contain;    /* Bild komplett sichtbar */
+    background-size: 100px 50px; /* Feste Größe */
+}
+```
+
+### `background-position`
+
+Positioniert das Hintergrundbild.
+
+```css
+div {
+    background-position: center;
+    background-position: top right;
+    background-position: 50% 50%;
+}
+```
+
+### `background-repeat`
+
+Steuert die Wiederholung des Hintergrundbilds.
+
+```css
+div {
+    background-repeat: no-repeat;  /* Keine Wiederholung */
+    background-repeat: repeat-x;   /* Nur horizontal */
+    background-repeat: repeat-y;   /* Nur vertikal */
+}
+```
+
+### `background` (Kurzform)
+
+```css
+div {
+    background: #f0f0f0 url('bild.jpg') no-repeat center/cover;
+}
+```
+
+---
