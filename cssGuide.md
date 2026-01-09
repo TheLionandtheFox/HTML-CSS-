@@ -1167,6 +1167,8 @@ p {
 
 Die `color`-Eigenschaft in CSS bestimmt die Farbe des Textes innerhalb eines Elements. Sie ist eine der am häufigsten verwendeten CSS-Eigenschaften und bildet die Grundlage für lesbare und ansprechende Typografie.
 
+### Grundlegende Syntax
+
 ```css
 p {
     color: red; /* rote Farbe */
