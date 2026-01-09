@@ -1187,6 +1187,56 @@ div {
 }
 ```
 
+### Farbdefinition: Verschiedene Formate
+
+CSS unterstützt mehrere Formate zur Farbangabe, jedes mit seinen eigenen Vor- und Nachteilen.
+
+### 1. Farbnamen (Named Colors)
+
+CSS kennt 147 vordefinierte Farbnamen wie `red`, `blue`, `green`, `white`, `black` usw. Diese sind intuitiv und leicht zu merken.
+
+```css
+h1 {
+    color: crimson;
+}
+
+p {
+    color: navy;
+}
+
+.highlight {
+    color: gold;
+}
+```
+
+**Vorteile:**
+
+- Einfach zu schreiben und zu merken
+- Gut für schnelles Prototyping
+- Selbstdokumentierend (man sieht sofort, welche Farbe gemeint ist)
+
+**Nachteile:**
+
+- Begrenzte Auswahl (nur 147 Farben)
+- Nicht präzise genug für professionelles Design
+- Verschiedene Browser können Farbnamen minimal unterschiedlich interpretieren
+
+**Häufige Farbnamen:**
+
+- `white` (#FFFFFF) – Weiß
+- `black` (#000000) – Schwarz
+- `red` (#FF0000) – Rot
+- `blue` (#0000FF) – Blau
+- `green` (#008000) – Grün
+- `gray` / `grey` (#808080) – Grau
+- `darkgray` (#A9A9A9) – Dunkelgrau
+- `lightgray` (#D3D3D3) – Hellgrau
+- `silver` (#C0C0C0) – Silber
+
+**Anwendungsfall:** Farbnamen eignen sich hauptsächlich für Entwicklungsumgebungen, schnelles Testen oder wenn man sehr gebräuchliche Farben benötigt. Für professionelle Projekte sollte man präzisere Formate verwenden.
+
+---
+
 ### `background-image`
 
 Setzt ein Hintergrundbild.
