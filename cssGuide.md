@@ -1327,6 +1327,77 @@ Die letzten zwei Zeichen (00-FF) bestimmen den Alpha-Kanal (Transparenz):
 
 ---
 
+### 3. RGB (Red Green Blue)
+
+RGB definiert Farben durch Mischung von Rot, Grün und Blau. Jeder Kanal kann Werte von 0 bis 255 annehmen (insgesamt 256 Stufen pro Kanal).
+
+```css
+p {
+    color: rgb(255, 0, 0);    /* Rot */
+    color: rgb(0, 255, 0);    /* Grün */
+    color: rgb(0, 0, 255);    /* Blau */
+    color: rgb(128, 128, 128); /* Mittleres Grau */
+}
+```
+
+**Syntax:**
+
+```css
+rgb(rot, grün, blau)
+```
+
+Jeder Wert ist eine Zahl von 0 bis 255.
+
+**Wie RGB funktioniert:**
+
+RGB ist ein additives Farbmodell – man startet mit Schwarz (keine Farbe) und addiert Licht:
+
+- `rgb(0, 0, 0)` = Schwarz (kein Licht)
+- `rgb(255, 255, 255)` = Weiß (alle Lichter voll)
+- `rgb(255, 0, 0)` = Rot (nur roter Kanal)
+- `rgb(255, 255, 0)` = Gelb (Rot + Grün = Gelb)
+- `rgb(0, 255, 255)` = Cyan (Grün + Blau = Cyan)
+
+**Vorteile von RGB:**
+
+- Intuitiver als Hex, da man mit Dezimalzahlen arbeitet
+- Einfacher zu verstehen, welche Farbe entsteht
+- Leichter programmatisch zu manipulieren (z.B. mit JavaScript)
+
+**Nachteile:**
+
+- Längere Schreibweise als Hex
+- Keine Transparenz (dafür gibt es RGBA)
+
+**Umrechnung Hex zu RGB:**
+
+Um einen Hex-Code zu RGB umzurechnen:
+
+1. Teile den Hex-Code in drei Paare: RR GG BB
+2. Rechne jedes Paar von Hexadezimal zu Dezimal um
+
+Beispiel: `#3498db`
+
+- `34` (hex) = 52 (dezimal)
+- `98` (hex) = 152 (dezimal)
+- `db` (hex) = 219 (dezimal)
+- Ergebnis: `rgb(52, 152, 219)`
+
+**Praxis-Beispiel:**
+
+```css
+.button-primary {
+    background-color: rgb(52, 152, 219);  /* Ein helles Blau */
+    color: rgb(255, 255, 255);            /* Weißer Text */
+}
+
+.button-primary:hover {
+    background-color: rgb(41, 128, 185);  /* Dunkleres Blau beim Hover */
+}
+```
+
+---
+
 ### `background-image`
 
 Setzt ein Hintergrundbild.
