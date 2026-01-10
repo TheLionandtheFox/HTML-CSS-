@@ -1237,6 +1237,96 @@ p {
 
 ---
 
+### 2. Hexadezimal (Hex-Codes)
+
+Hexadezimale Farbcodes sind das am häufigsten verwendete Format in professionellem Webdesign. Sie bestehen aus einem Hash-Symbol (#) gefolgt von 6 Zeichen (0-9 und A-F), die die Rot-, Grün- und Blau-Anteile der Farbe repräsentieren.
+
+```css
+p {
+    color: #ff0000;  /* Rot */
+}
+
+h2 {
+    color: #0000ff;  /* Blau */
+}
+
+.text {
+    color: #3498db;  /* Ein helles Blau */
+}
+```
+
+**Aufbau eines Hex-Codes:**
+
+`#RRGGBB` – wobei:
+
+- **RR** = Rot (00 bis FF)
+- **GG** = Grün (00 bis FF)
+- **BB** = Blau (00 bis FF)
+
+Jedes Paar kann Werte von 00 (keine Farbe) bis FF (maximale Farbe) annehmen. FF in Hexadezimal entspricht 255 in Dezimal.
+
+**Beispiele mit Erklärung:**
+
+```css
+#000000  /* Schwarz (kein Rot, kein Grün, kein Blau) */
+#FFFFFF  /* Weiß (maximales Rot, Grün und Blau) */
+#FF0000  /* Reines Rot (nur Rot-Kanal voll) */
+#00FF00  /* Reines Grün */
+#0000FF  /* Reines Blau */
+#808080  /* Mittleres Grau (alle Kanäle bei 50%) */
+#FF00FF  /* Magenta (Rot + Blau) */
+#00FFFF  /* Cyan (Grün + Blau) */
+#FFFF00  /* Gelb (Rot + Grün) */
+```
+
+**Kurzform (3-stellig):**
+
+Wenn beide Zeichen eines Farbkanals identisch sind, kann man die Kurzform verwenden:
+
+```css
+#f00  /* Gleich wie #ff0000 (Rot) */
+#0f0  /* Gleich wie #00ff00 (Grün) */
+#00f  /* Gleich wie #0000ff (Blau) */
+#fff  /* Gleich wie #ffffff (Weiß) */
+#000  /* Gleich wie #000000 (Schwarz) */
+#369  /* Gleich wie #336699 */
+```
+
+Der Browser erweitert automatisch: `#f00` wird zu `#ff0000`.
+
+**Hex mit Transparenz (8-stellig):**
+
+Moderne Browser unterstützen auch 8-stellige Hex-Codes für Transparenz:
+
+```css
+#ff000080  /* Rot mit 50% Transparenz */
+#3498dbff  /* Volles Blau (FF = 100% opak) */
+#00000000  /* Komplett transparent */
+```
+
+Die letzten zwei Zeichen (00-FF) bestimmen den Alpha-Kanal (Transparenz):
+
+- `00` = komplett transparent
+- `80` = 50% transparent
+- `FF` = komplett deckend
+
+**Vorteile:**
+
+- Präzise Farbdefinition (16,7 Millionen Farben möglich)
+- Kompakte Schreibweise
+- Weit verbreitet und von allen Design-Tools unterstützt
+- Gut lesbar, wenn man das System versteht
+
+**Nachteile:**
+
+- Nicht intuitiv für Anfänger
+- Schwer, Farben "im Kopf" zu mischen
+- Transparenz erfordert 8-stellige Codes (nicht alle Tools unterstützen das)
+
+**Praxis-Tipp:** Man kann Hex-Codes aus Design-Tools (Figma, Photoshop, etc.) kopieren oder Online-Farbwähler nutzen. Moderne Code-Editoren zeigen oft eine Farbvorschau neben dem Code an.
+
+---
+
 ### `background-image`
 
 Setzt ein Hintergrundbild.
