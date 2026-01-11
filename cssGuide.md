@@ -1641,6 +1641,36 @@ p {
 
 ---
 
+## Teil 2: Hintergründe
+
+Hintergründe sind ein essentielles Gestaltungselement in CSS. Sie können einfarbig sein, Bilder enthalten, Verläufe verwenden oder aus mehreren Schichten bestehen.
+
+### `background` (Kurzform)
+
+```css
+div {
+    background: #f0f0f0 url('bild.jpg') no-repeat center/cover;
+}
+```
+
+### `background-color` - Hintergrundfarbe
+
+Die `background-color`-Eigenschaft setzt eine solide Hintergrundfarbe für ein Element. Sie akzeptiert alle Farbformate, die wir bereits besprochen haben.
+
+```css
+div {
+    background-color: lightblue;
+}
+
+.header {
+    background-color: #3498db;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+```
+
 ### `background-image`
 
 Setzt ein Hintergrundbild.
@@ -1684,14 +1714,6 @@ div {
     background-repeat: no-repeat;  /* Keine Wiederholung */
     background-repeat: repeat-x;   /* Nur horizontal */
     background-repeat: repeat-y;   /* Nur vertikal */
-}
-```
-
-### `background` (Kurzform)
-
-```css
-div {
-    background: #f0f0f0 url('bild.jpg') no-repeat center/cover;
 }
 ```
 
