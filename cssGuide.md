@@ -1590,6 +1590,41 @@ Durch Änderung nur der `--hue`-Variable kann man die gesamte Farbpalette auf ei
 
 ---
 
+### 6. HSLA (HSL mit Alpha)
+
+Wie RGBA erweitert HSLA das HSL-Format um Transparenz.
+
+```css
+p {
+    color: hsla(0, 100%, 50%, 0.5);    /* Halbtransparentes Rot */
+    color: hsla(120, 100%, 50%, 0.3);  /* 30% deckend Grün */
+}
+```
+
+**Syntax:**
+
+```css
+hsla(hue, saturation, lightness, alpha)
+```
+
+Praxis-Beispiel: **Dynamisches Theme mit Transparenz**
+
+```css
+:root {
+    --theme-hue: 210;
+}
+
+.overlay {
+    background-color: hsla(var(--theme-hue), 50%, 30%, 0.9);
+}
+
+.highlight {
+    background-color: hsla(var(--theme-hue), 80%, 60%, 0.2);
+}
+```
+
+---
+
 ### `background-image`
 
 Setzt ein Hintergrundbild.
