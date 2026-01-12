@@ -1740,17 +1740,87 @@ body {
 
 ---
 
-### `background-size`
+### `background-size` - Größe des Hintergrundbilds
 
-Steuert die Größe des Hintergrundbilds.
+Steuert die Darstellungsgröße des Hintergrundbilds.
 
 ```css
 div {
-    background-size: cover;      /* Füllt Container aus */
-    background-size: contain;    /* Bild komplett sichtbar */
-    background-size: 100px 50px; /* Feste Größe */
+    background-size: cover;      /* Füllt Container aus, beschneidet ggf. */
+    background-size: contain;    /* Bild komplett sichtbar, ggf. Leerraum */
+    background-size: 100px 50px; /* Feste Breite × Höhe */
+    background-size: 50%;        /* 50% der Container-Breite */
+    background-size: auto;       /* Original-Größe (Standard) */
 }
 ```
+
+**Die verschiedenen Werte im Detail:**
+
+#### `cover` - Füllt den Container vollständig
+
+```css
+.hero {
+    background-image: url('landscape.jpg');
+    background-size: cover;
+}
+```
+
+**Verhalten:**
+
+- Das Bild wird so skaliert, dass es den **gesamten Container ausfüllt**
+- Das Seitenverhältnis bleibt erhalten
+- Teile des Bildes können **abgeschnitten** werden
+- Kein Leerraum im Container
+
+**Anwendungsfall:** Hero-Sections, Full-Screen-Backgrounds, wenn der Container immer gefüllt sein soll.
+
+#### `contain` - Bild vollständig sichtbar
+
+```css
+.gallery-item {
+    background-image: url('photo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+```
+
+**Verhalten:**
+
+- Das Bild wird so skaliert, dass es **vollständig sichtbar** ist
+- Das Seitenverhältnis bleibt erhalten
+- Es kann **Leerraum** entstehen
+- Das Bild wird nicht abgeschnitten
+
+**Anwendungsfall:** Produkt-Bilder, Logos, wenn das gesamte Bild sichtbar sein muss.
+
+#### Feste Größen
+
+```css
+.icon {
+    background-image: url('icon.png');
+    background-size: 50px 50px;  /* Breite × Höhe */
+}
+
+.banner {
+    background-size: 100% auto;  /* Volle Breite, Höhe automatisch */
+}
+
+.sidebar {
+    background-size: auto 200px;  /* Breite automatisch, feste Höhe */
+}
+```
+
+**Prozentuale Angaben:**
+
+```css
+.element {
+    background-size: 50% 50%;  /* 50% der Container-Breite und -Höhe */
+}
+```
+
+**Wichtig:** Bei zwei Werten gilt: `Breite Höhe`. Bei einem Wert wird die Höhe automatisch berechnet (Seitenverhältnis bleibt erhalten).
+
+---
 
 ### `background-position`
 
