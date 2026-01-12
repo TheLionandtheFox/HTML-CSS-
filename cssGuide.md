@@ -1733,3 +1733,136 @@ div {
 ```
 
 ---
+
+## 3. Text & Schrift
+
+### `font-family`
+
+Legt die Schriftart fest.
+
+```css
+p {
+    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', serif;
+    font-family: 'Courier New', monospace;
+}
+```
+
+### `font-size`
+
+Bestimmt die Schriftgröße.
+
+```css
+p {
+    font-size: 16px;      /* Pixel (fest) */
+    font-size: 1.5em;     /* Relativ zum Elternelement */
+    font-size: 1.5rem;    /* Relativ zum Root-Element */
+    font-size: 100%;      /* Prozent */
+}
+```
+
+### `font-weight`
+
+Steuert die Schriftstärke (Fettdruck).
+
+```css
+p {
+    font-weight: normal;   /* 400 */
+    font-weight: bold;     /* 700 */
+    font-weight: 600;      /* Zahlenwert */
+}
+```
+
+### `font-style`
+
+Setzt den Schriftstil.
+
+```css
+p {
+    font-style: normal;
+    font-style: italic;
+    font-style: oblique;
+}
+```
+
+### `text-align`
+
+Richtet Text horizontal aus.
+
+```css
+p {
+    text-align: left;
+    text-align: center;
+    text-align: right;
+    text-align: justify;  /* Blocksatz */
+}
+```
+
+### `text-decoration`
+
+Fügt Textdekorationen hinzu oder entfernt sie.
+
+```css
+a {
+    text-decoration: none;        /* Unterstreichung entfernen */
+    text-decoration: underline;
+    text-decoration: line-through; /* Durchgestrichen */
+}
+```
+
+### `text-transform`
+
+Ändert die Groß-/Kleinschreibung.
+
+```css
+p {
+    text-transform: uppercase;   /* GROSSBUCHSTABEN */
+    text-transform: lowercase;   /* kleinbuchstaben */
+    text-transform: capitalize;  /* Erster Buchstabe Groß */
+}
+```
+
+### `line-height`
+
+Bestimmt die Zeilenhöhe.
+
+```css
+p {
+    line-height: 1.5;      /* Faktor (empfohlen) */
+    line-height: 24px;     /* Feste Höhe */
+}
+```
+
+### `letter-spacing`
+
+Steuert den Abstand zwischen Buchstaben.
+
+```css
+h1 {
+    letter-spacing: 2px;
+    letter-spacing: -1px;  /* Engerer Abstand */
+}
+```
+
+### `word-spacing`
+
+Steuert den Abstand zwischen Wörtern.
+
+```css
+p {
+    word-spacing: 5px;
+}
+```
+
+### `text-shadow`
+
+Fügt einen Schatten zum Text hinzu.
+
+```css
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* horizontal vertikal unschärfe farbe */
+}
+```
+
+---
