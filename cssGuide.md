@@ -1971,6 +1971,7 @@ Das Bild wird horizontal und vertikal wiederholt, um den gesamten Container zu f
 ```
 
 **Verhalten:**
+
 - Bilder werden wiederholt, aber **nicht abgeschnitten**
 - Zwischen den Bildern entstehen **gleichmäßige Abstände**
 - Wenn nur ein Bild passt, wird es zentriert
@@ -1985,6 +1986,7 @@ Das Bild wird horizontal und vertikal wiederholt, um den gesamten Container zu f
 ```
 
 **Verhalten:**
+
 - Bilder werden leicht **gestreckt oder gestaucht**
 - So dass sie **ohne Abschneiden** perfekt kacheln
 - Das Seitenverhältnis kann sich ändern
