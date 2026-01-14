@@ -1822,17 +1822,82 @@ div {
 
 ---
 
-### `background-position`
+### `background-position` - Position des Hintergrundbilds
 
-Positioniert das Hintergrundbild.
+Bestimmt, wo das Hintergrundbild innerhalb des Elements positioniert wird.
 
 ```css
 div {
-    background-position: center;
-    background-position: top right;
-    background-position: 50% 50%;
+    background-position: center;        /* Zentriert (horizontal und vertikal) */
+    background-position: top right;     /* Oben rechts */
+    background-position: bottom left;   /* Unten links */
+    background-position: 50% 50%;       /* Prozentual zentriert */
+    background-position: 20px 30px;     /* 20px von links, 30px von oben */
 }
 ```
+
+**Schlüsselwörter:**
+
+Horizontal: `left`, `center`, `right`  
+Vertikal: `top`, `center`, `bottom`
+
+```css
+/* Ein Wert = horizontal, vertikal wird auf center gesetzt */
+background-position: right;  /* = right center */
+
+/* Zwei Werte */
+background-position: top right;     /* Oben rechts */
+background-position: center bottom; /* Horizontal zentriert, unten */
+```
+
+**Prozentuale Angaben:**
+
+```css
+background-position: 0% 0%;      /* Oben links (Standard) */
+background-position: 100% 100%;  /* Unten rechts */
+background-position: 50% 50%;    /* Zentriert */
+background-position: 25% 75%;    /* 25% von links, 75% von oben */
+```
+
+**Wichtig:** Bei Prozentangaben wird der entsprechende Punkt des Bildes mit dem entsprechenden Punkt des Containers ausgerichtet. `50% 50%` bedeutet: Der Mittelpunkt des Bildes liegt am Mittelpunkt des Containers.
+
+**Pixel/Em-Angaben:**
+
+```css
+background-position: 10px 20px;   /* 10px von links, 20px von oben */
+background-position: 2em 1em;     /* Relativ zur Schriftgröße */
+background-position: -10px 0;     /* Negativ = aus dem Container heraus */
+```
+
+**Vier-Wert-Syntax (präzise Positionierung):**
+
+```css
+/* 10px vom rechten Rand, 20px vom unteren Rand */
+background-position: right 10px bottom 20px;
+
+/* 5% vom linken Rand, 10% vom oberen Rand */
+background-position: left 5% top 10%;
+```
+
+**Praxis-Beispiele:**
+
+```css
+/* Logo oben links mit Abstand */
+.header {
+    background-image: url('logo.png');
+    background-position: left 20px top 20px;
+    background-repeat: no-repeat;
+}
+
+/* Dekoratives Bild unten rechts */
+.section {
+    background-image: url('decoration.svg');
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+```
+
+---
 
 ### `background-repeat`
 
