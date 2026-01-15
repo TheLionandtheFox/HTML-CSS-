@@ -2002,6 +2002,48 @@ background-repeat: space round;         /* Horizontal space, vertikal round */
 
 ---
 
+### `background-attachment` - Scroll-Verhalten
+
+Bestimmt, ob der Hintergrund mit dem Inhalt scrollt oder fixiert bleibt.
+
+```css
+div {
+    background-attachment: scroll;  /* Scrollt mit (Standard) */
+    background-attachment: fixed;   /* Fixiert relativ zum Viewport */
+    background-attachment: local;   /* Scrollt mit dem Element-Inhalt */
+}
+```
+
+**Die verschiedenen Werte:**
+
+#### `scroll` - Standard-Verhalten
+
+```css
+.section {
+    background-image: url('pattern.png');
+    background-attachment: scroll;
+}
+```
+
+Der Hintergrund ist fest mit dem Element verbunden. Wenn man die Seite scrollt, scrollt der Hintergrund mit.
+
+#### `fixed` - Parallax-Effekt
+
+```css
+.parallax {
+    background-image: url('mountains.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+```
+
+**Verhalten:**
+
+- Der Hintergrund bleibt **relativ zum Viewport fixiert**
+
+- Beim Scrollen scheint der Inhalt über
+
 **Box-Model und Hintergrundfarbe:**
 
 ```
