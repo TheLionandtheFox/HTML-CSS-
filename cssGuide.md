@@ -2112,6 +2112,51 @@ font-family: "Courier New", monospace;
 
 /* Falsch */
 font-family: Times New Roman, serif;  /* Syntax-Fehler! */
+```
+
+**Die fünf generischen Schriftfamilien:**
+
+Diese sollten immer am Ende des Font Stack stehen:
+
+#### 1. `serif` - Serifenschriften
+
+Schriften mit kleinen "Füßchen" an den Buchstabenenden. Wirken traditionell, seriös, elegant.
+
+```css
+.article {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+```
+
+**Typische Serif-Schriften:**
+
+- Georgia
+- Times New Roman
+- Garamond
+- Palatino
+
+**Anwendungsfall:** Lange Texte, Artikel, formelle Dokumente, Print-Design-Ästhetik
+
+---
+
+#### 2. `sans-serif` - Serifenlose Schriften
+
+Schriften ohne Verzierungen. Wirken modern, klar, sachlich.
+
+```css
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+```
+
+**Typische Sans-Serif-Schriften:**
+- Arial
+- Helvetica
+- Verdana
+- Roboto
+- Open Sans
+
+**Anwendungsfall:** Moderne Websites, UI-Elemente, Bildschirm-Lesbarkeit
 
 ---
 
