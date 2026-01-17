@@ -2188,7 +2188,40 @@ Schriften, die Handschrift imitieren.
 
 **Anwendungsfall:** Unterschriften, dekorative Überschriften (sparsam einsetzen!)
 
+#### 5. `fantasy` - Dekorative Schriften
 
+Stark stilisierte, künstlerische Schriften.
+
+```css
+.logo {
+    font-family: 'Impact', fantasy;
+}
+```
+
+**Anwendungsfall:** Logos, Überschriften (sehr sparsam!)
+
+**System Font Stack (moderne Best Practice):**
+
+Verwendet die Standard-UI-Schriften des jeweiligen Betriebssystems:
+
+```css
+body {
+    font-family: 
+        -apple-system,        /* macOS/iOS Safari */
+        BlinkMacSystemFont,   /* macOS Chrome */
+        'Segoe UI',           /* Windows */
+        Roboto,               /* Android */
+        'Helvetica Neue',     /* macOS älter */
+        Arial,                /* Universal Fallback */
+        sans-serif;           /* Generischer Fallback */
+}
+```
+
+**Vorteile:**
+- Keine Ladezeit (Schriften bereits im System)
+- Native Darstellung auf jedem Gerät
+- Optimale Lesbarkeit
+- Konsistent mit OS-UI
 
 ---
 
