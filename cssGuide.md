@@ -2240,6 +2240,30 @@ body {
 }
 ```
 
+Methode 2: **@font-face (eigene Fonts)**
+
+```css
+@font-face {
+    font-family: 'MeineSchrift';
+    src: url('fonts/meineschrift.woff2') format('woff2'),
+         url('fonts/meineschrift.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;  /* Wichtig für Performance */
+}
+
+body {
+    font-family: 'MeineSchrift', sans-serif;
+}
+```
+
+**`font-display` Werte:**
+
+- `swap` – Text sofort mit Fallback anzeigen, dann Font tauschen (empfohlen)
+- `block` – Kurz warten, dann Fallback, dann Font
+- `fallback` – Sehr kurz warten, dann Fallback (Font wird ggf. gar nicht geladen)
+- `optional` – Browser entscheidet basierend auf Verbindungsgeschwindigkeit
+
 ---
 
 ### `font-size`
