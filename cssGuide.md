@@ -2218,10 +2218,27 @@ body {
 ```
 
 **Vorteile:**
+
 - Keine Ladezeit (Schriften bereits im System)
 - Native Darstellung auf jedem Gerät
 - Optimale Lesbarkeit
 - Konsistent mit OS-UI
+
+**Web Fonts einbinden:**
+
+Methode 1: **Google Fonts**
+
+```html
+<!-- Im HTML <head> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+```
+
+```css
+body {
+    font-family: 'Roboto', sans-serif;
+}
+```
 
 ---
 
