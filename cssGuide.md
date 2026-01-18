@@ -2295,6 +2295,7 @@ h1 {
 ```
 
 **Eigenschaften:**
+
 - Feste Größe, ändert sich nicht
 - Einfach zu verstehen und zu berechnen
 - Ignoriert Browser-Einstellungen (problematisch für Barrierefreiheit!)
@@ -2320,6 +2321,7 @@ body {
 ```
 
 **Eigenschaften:**
+
 - Relativ zur Schriftgröße des **Elternelements**
 - Kaskadiert (kann zu unerwarteten Ergebnissen führen)
 - Gut für komponentenbasiertes Scaling
@@ -2376,7 +2378,7 @@ small {
 - Ein zentraler Ort (`:root` / `html`) für Schriftgrößen-Anpassungen
 - Barrierefreiheit wird unterstützt
 
-**Best Practice: 62.5% Trick**
+Best Practice: **62.5% Trick**
 
 ```css
 html {
@@ -2433,6 +2435,7 @@ h1 {
 ```
 
 **Eigenschaften:**
+
 - `vw` = 1% der Viewport-Breite
 - `vh` = 1% der Viewport-Höhe
 - `vmin` = 1% der kleineren Dimension
@@ -2442,7 +2445,7 @@ h1 {
 
 **Problem:** Kann auf sehr kleinen oder sehr großen Bildschirmen extrem werden.
 
-**Lösung: Clamp() verwenden**
+Lösung: **Clamp() verwenden**
 
 ```css
 h1 {
