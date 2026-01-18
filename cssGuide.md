@@ -2365,11 +2365,13 @@ small {
 ```
 
 **Eigenschaften:**
+
 - Relativ zur Schriftgröße des `<html>`-Elements
 - Kaskadiert **nicht** (konsistenter als em)
 - Respektiert Browser-Einstellungen (barrierefreundlich)
 
 **Vorteile:**
+
 - Vorhersehbar und einfach zu berechnen
 - Ein zentraler Ort (`:root` / `html`) für Schriftgrößen-Anpassungen
 - Barrierefreiheit wird unterstützt
@@ -2417,6 +2419,18 @@ h1 {
 Verhält sich ähnlich wie `em`, aber mit Prozent-Notation.
 
 **Wann verwenden:** Selten, `em` oder `rem` sind meist besser.
+
+#### Viewport-Einheiten (vw, vh, vmin, vmax)
+
+```css
+h1 {
+    font-size: 5vw;    /* 5% der Viewport-Breite */
+}
+
+.hero-text {
+    font-size: 4vmin;  /* 4% der kleineren Viewport-Dimension */
+}
+```
 
 
 
