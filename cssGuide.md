@@ -2432,7 +2432,61 @@ h1 {
 }
 ```
 
+**Eigenschaften:**
+- `vw` = 1% der Viewport-Breite
+- `vh` = 1% der Viewport-Höhe
+- `vmin` = 1% der kleineren Dimension
+- `vmax` = 1% der größeren Dimension
 
+**Anwendungsfall:** Responsive Typografie, Hero-Sections, große Überschriften
+
+**Problem:** Kann auf sehr kleinen oder sehr großen Bildschirmen extrem werden.
+
+**Lösung: Clamp() verwenden**
+
+```css
+h1 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    /* Min: 1.5rem, Bevorzugt: 5vw, Max: 4rem */
+}
+```
+
+**Keyword-Werte:**
+
+```css
+p {
+    font-size: small;       /* Browser-definierte Größe */
+    font-size: medium;      /* Standard (meist 16px) */
+    font-size: large;
+    font-size: x-large;
+    font-size: xx-large;
+    font-size: smaller;     /* Relativ zur Eltern-Größe */
+    font-size: larger;      /* Relativ zur Eltern-Größe */
+}
+```
+
+**Wann verwenden:** Selten, außer für schnelles Prototyping.
+
+**Typografische Skala (Empfehlung):**
+
+```css
+:root {
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    --font-size-5xl: 3rem;      /* 48px */
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+p { font-size: var(--font-size-base); }
+```
 
 ---
 
