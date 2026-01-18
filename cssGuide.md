@@ -2266,18 +2266,161 @@ body {
 
 ---
 
-### `font-size`
+### `font-size` - Schriftgröße
 
-Bestimmt die Schriftgröße.
+Die `font-size`-Eigenschaft bestimmt die Größe des Textes. Die Wahl der richtigen Einheit ist entscheidend für Responsive Design und Barrierefreiheit.
 
 ```css
 p {
-    font-size: 16px;      /* Pixel (fest) */
+    font-size: 16px;      /* Pixel (absolut) */
     font-size: 1.5em;     /* Relativ zum Elternelement */
     font-size: 1.5rem;    /* Relativ zum Root-Element */
-    font-size: 100%;      /* Prozent */
+    font-size: 100%;      /* Prozent (relativ zum Elternelement) */
+    font-size: 1.2vw;     /* Relativ zur Viewport-Breite */
 }
 ```
+
+**Die verschiedenen Einheiten im Detail:**
+
+#### Pixel (px) - Absolute Einheit
+
+```css
+p {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 32px;
+}
+```
+
+**Eigenschaften:**
+- Feste Größe, ändert sich nicht
+- Einfach zu verstehen und zu berechnen
+- Ignoriert Browser-Einstellungen (problematisch für Barrierefreiheit!)
+
+**Wann verwenden:** Nur wenn präzise Pixel-Größen erforderlich sind (selten!)
+
+**Problem:** Nutzer, die die Browser-Schriftgröße ändern (z.B. sehbehinderte Menschen), werden ignoriert.
+
+#### Em (em) - Relativ zum Elternelement
+
+```css
+body {
+    font-size: 16px;  /* Basis */
+}
+
+.container {
+    font-size: 1.2em;  /* 1.2 × 16px = 19.2px */
+}
+
+.container p {
+    font-size: 0.875em;  /* 0.875 × 19.2px = 16.8px */
+}
+```
+
+**Eigenschaften:**
+- Relativ zur Schriftgröße des **Elternelements**
+- Kaskadiert (kann zu unerwarteten Ergebnissen führen)
+- Gut für komponentenbasiertes Scaling
+
+**Kaskadierungs-Problem:**
+
+```css
+.outer {
+    font-size: 1.2em;  /* 19.2px wenn Basis 16px */
+}
+
+.outer .inner {
+    font-size: 1.2em;  /* 1.2 × 19.2px = 23.04px (!) */
+}
+
+.outer .inner .deep {
+    font-size: 1.2em;  /* 1.2 × 23.04px = 27.65px (!!) */
+}
+```
+
+Die Schriftgröße wird bei jeder Verschachtelungsebene multipliziert!
+
+**Wann verwenden:** Für relative Größen innerhalb einer Komponente (z.B. Buttons)
+
+#### Rem (rem) - Relativ zum Root-Element
+
+```css
+html {
+    font-size: 16px;  /* Root-Schriftgröße */
+}
+
+p {
+    font-size: 1rem;      /* = 16px */
+}
+
+h1 {
+    font-size: 2.5rem;    /* = 40px */
+}
+
+small {
+    font-size: 0.875rem;  /* = 14px */
+}
+```
+
+**Eigenschaften:**
+- Relativ zur Schriftgröße des `<html>`-Elements
+- Kaskadiert **nicht** (konsistenter als em)
+- Respektiert Browser-Einstellungen (barrierefreundlich)
+
+**Vorteile:**
+- Vorhersehbar und einfach zu berechnen
+- Ein zentraler Ort (`:root` / `html`) für Schriftgrößen-Anpassungen
+- Barrierefreiheit wird unterstützt
+
+**Best Practice: 62.5% Trick**
+
+```css
+html {
+    font-size: 62.5%;  /* = 10px bei Standard-Browser (16px × 0.625) */
+}
+
+body {
+    font-size: 1.6rem;  /* = 16px */
+}
+
+h1 {
+    font-size: 3.2rem;  /* = 32px */
+}
+
+small {
+    font-size: 1.4rem;  /* = 14px */
+}
+```
+
+**Vorteil:** Einfache Umrechnung: `1rem = 10px`, `1.6rem = 16px`, etc.
+
+**Wann verwenden:** Standard für moderne Websites (empfohlen!)
+
+#### Prozent (%) - Relativ zum Elternelement
+
+```css
+body {
+    font-size: 16px;
+}
+
+p {
+    font-size: 100%;   /* = 16px */
+}
+
+h1 {
+    font-size: 200%;   /* = 32px */
+}
+```
+
+Verhält sich ähnlich wie `em`, aber mit Prozent-Notation.
+
+**Wann verwenden:** Selten, `em` oder `rem` sind meist besser.
+
+
+
+---
 
 #### `font-weight`
 
