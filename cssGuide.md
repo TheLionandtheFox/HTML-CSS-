@@ -2493,16 +2493,32 @@ p { font-size: var(--font-size-base); }
 
 ---
 
-#### `font-weight`
+### `font-weight` - Schriftstärke (Dicke)
 
-Steuert die Schriftstärke (Fettdruck).
+Die `font-weight`-Eigenschaft steuert, wie fett oder dünn Schrift dargestellt wird.
 
 ```css
 p {
-    font-weight: normal;   /* 400 */
-    font-weight: bold;     /* 700 */
-    font-weight: 600;      /* Zahlenwert */
+    font-weight: normal;   /* = 400 */
+    font-weight: bold;     /* = 700 */
+    font-weight: 600;      /* Numerischer Wert */
+    font-weight: lighter;  /* Dünner als Elternelement */
+    font-weight: bolder;   /* Dicker als Elternelement */
 }
+```
+
+**Numerische Werte (100-900):**
+
+```css
+.thin        { font-weight: 100; }  /* Thin / Hairline */
+.extra-light { font-weight: 200; }  /* Extra Light */
+.light       { font-weight: 300; }  /* Light */
+.normal      { font-weight: 400; }  /* Normal / Regular */
+.medium      { font-weight: 500; }  /* Medium */
+.semi-bold   { font-weight: 600; }  /* Semi Bold / Demi Bold */
+.bold        { font-weight: 700; }  /* Bold */
+.extra-bold  { font-weight: 800; }  /* Extra Bold */
+.black       { font-weight: 900; }  /* Black / Heavy */
 ```
 
 #### `font-style`
